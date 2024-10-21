@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Comedores</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Fuente moderna */
+            margin: 20px;
+            background: linear-gradient(135deg, #0D3B66, #FAF0B8); /* Fondo elegante */
+            color: #fff; /* Color del texto */
+        }
+        h1 {
+            text-align: center;
+            color: #F1FAEE; /* Color del encabezado */
+            font-size: 2.5em; /* Tamaño del encabezado */
+            margin-bottom: 20px; /* Espacio inferior */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .comedor {
+            border: 1px solid #fff; /* Borde blanco */
+            border-radius: 10px;
+            width: 300px;
+            background-color: rgba(0, 123, 255, 0.8); /* Color de fondo con opacidad */
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+            flex: 1 1 300px;
+            transition: transform 0.3s; /* Efecto de hover */
+        }
+        .comedor:hover {
+            transform: scale(1.05); /* Escala al pasar el ratón */
+        }
+        .comedor img {
+            max-width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .comedor h2 {
+            color: #F1FAEE; /* Color del título */
+            margin: 15px 0;
+            cursor: pointer;
+            font-size: 1.5em; /* Tamaño del título */
+        }
+        .comedor p {
+            padding: 0 15px 15px;
+            font-size: 16px;
+            color: #FAF0B8; /* Color del texto del párrafo */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Carga de fuente Roboto -->
+</head>
+<body>
+
+    <h1>Tipos de Análisis de Datos</h1>
+
+    <div class="container">
+        <div class="comedor">
+            <a href="javascript:void(0);" onclick="goToPage('analisis_basico.html')"> <!-- Ajusta aquí la ruta -->
+                <img src="images/análisis_de_base_de_datos_compressor.jpg" class="card-img-top" alt="Análisis Básico">
+            </a>
+            <h2 onclick="goToPage('analisis_basico.html')">Análisis Básico</h2> <!-- Ajusta aquí la ruta -->
+            <p>Un análisis básico de datos es un proceso que implica la recopilación, organización y examen inicial de un conjunto de datos para extraer conclusiones y tomar decisiones informadas</p>
+        </div>
+
+        <div class="comedor">
+            <a href="ruta/del/estudio_mercado_completo.html">
+                <img src="images/ai_generated_9040782_640.jpg" alt="Estudio de Mercado Completo">
+            </a>
+            <h2>Estudio de Mercado Completo</h2>
+            <p>Es un proceso sistemático que busca comprender el entorno de un mercado específico, evaluando diversos factores que influyen en la oferta y demanda de productos o servicios</p>
+        </div>
+
+        <div class="comedor">
+            <a href="ruta/del/automatizacion_reportes.html">
+                <img src="images/artificial_intelligence_8795201_640.jpg" alt="Automatización de Reportes">
+            </a>
+            <h2>Automatización de Reportes y Dashboards</h2>
+            <p>La automatización de reportes y dashboards es el proceso de utilizar herramientas y tecnologías para generar informes y visualizaciones de datos de manera automática y en tiempo real, sin necesidad de intervención manual.</p>
+        </div>
+
+        <div class="comedor">
+            <a href="ruta/del/consultoria_personalizada.html">
+                <img src="images/blockchain_4744367_640.jpg" alt="Consultoría Personalizada">
+            </a>
+            <h2>Consultoría Personalizada</h2>
+            <p>Consiste en brindar soluciones específicas y adaptadas a las necesidades del cliente en análisis de datos, incluyendo evaluación de necesidades, diseño de estrategias, análisis de datos, generación de informes y dashboards, capacitación, y seguimiento para optimizar la toma de decisiones.</p>
+        </div>
+    </div>
+
+    <script>
+        // Función para redirigir a la página especificada
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+
+    <h1>Estudios de Ciberseguridad</h1>
+    <div class="container">
+        <div class="comedor">
+            <a href="javascript:void(0);" onclick="goToPage('servicios_analisis_trafico.html')">
+                <img src="images/biometrics-4503107_640.jpg" class="card-img-top" alt="Análisis de Tráfico">
+            </a>
+            <h2 onclick="goToPage('servicios_analisis_trafico.html')">Análisis de Tráfico</h2>
+            <p>identificación de patrones regulares o inusuales en el tráfico de red con visualización de datos</p>
+        </div>
+        <div class="comedor">
+            <a href="javascript:void(0);" onclick="goToPage('servicios_vulnerabilidades.html')">
+                <img src="images/security-2337429_640.png" class="card-img-top" alt="Análisis de Tráfico" style="width: 80%; height: auto;">
+            </a>
+            <h2 onclick="goToPage('servicios_vulnerabilidades.html')">Escaneo de Vulnerabilidades</h2>
+            <p >Generación de informe con múltiples puntos débiles en la red, clasificados por gravedad y tipo.</p>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
