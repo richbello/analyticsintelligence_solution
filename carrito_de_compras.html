@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-5OthUq5WszK7tEk8z5c8fdn1uWhO3d3r3u7FX6c6fFQ30gJc1DW12A0F5WctVUp8" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #002147; /* Fondo oscuro */
+            color: #FFFFFF; /* Texto en blanco */
+        }
+        .product-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .table {
+            color: #FFFFFF;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            color: #FFFFFF; /* Letras en blanco en la tabla */
+        }
+        .table-light th {
+            color: #002147; /* Letras en oscuro para encabezado de tabla */
+        }
+        .carrito-titulo, .resumen-titulo, .btn-resumen {
+            color: #FFFFFF; /* Letras en blanco */
+        }
+        .card {
+            background-color: #004080; /* Color oscuro en el resumen */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            color: #FFFFFF;
+        }
+        .btn-primary {
+            background-color: #FFD700; /* Amarillo mostaza */
+            border-color: #FFD700;
+            color: #002147;
+        }
+        .btn-primary:hover {
+            background-color: #FFC107;
+            border-color: #FFC107;
+        }
+        .total {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #FFD700; /* Amarillo mostaza para resaltar */
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 carrito-titulo">Carrito de Compras</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="images/análisis_de_base_de_datos_compressor.jpg" alt="Imagen del producto" class="product-image"></td>
+                        <td>Producto 1</td>
+                        <td>$10.00</td>
+                        <td><input type="number" class="form-control" value="1" min="1"></td>
+                        <td>$10.00</td>
+                        <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/blockchain_4744367_640.jpg" alt="Imagen del producto" class="product-image"></td>
+                        <td>Producto 2</td>
+                        <td>$15.00</td>
+                        <td><input type="number" class="form-control" value="1" min="1"></td>
+                        <td>$15.00</td>
+                        <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex justify-content-end mt-4">
+            <div class="card p-3" style="width: 300px;">
+                <h4 class="mb-3 resumen-titulo">Resumen</h4>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal</span> <span>$25.00</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Envío</span> <span>$5.00</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="total">Total</span> <span class="total">$30.00</span>
+                </div>
+                <button class="btn btn-primary w-100 btn-resumen">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-3">
+        <p>&copy; 2024 analyticsintelligence.solutions. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-GLhlTQH8pLozj2Kt8gObQ4F4enY1fPrP7vNCsMfF7bISn27u9Z6I3K2l7pLQ7T3" crossorigin="anonymous"></script>
+</body>
+</html>
