@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Básico de Datos</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Fuente moderna */
+            margin: 20px;
+            background: linear-gradient(135deg, #A7C6ED,#AED6F1 ); /* Fondo azul claro */
+            color: #2c3e50; /* Color del texto principal */
+        }
+        h1 {
+            text-align: center;
+            color: #030303; /* Color del encabezado */
+            margin-bottom: 20px; /* Espacio inferior */
+            font-size: 2.5em; /* Tamaño del encabezado */
+        }
+        h2 {
+            color: #030303; /* Color de los subtítulos */
+            margin-top: 20px;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+            background-color: #fff; /* Fondo blanco para la tabla */
+        }
+        table, th, td {
+            border: 1px solid #bdc3c7;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #ecf0f1; /* Color de fondo para encabezados de tabla */
+        }
+        p {
+            line-height: 1.6; /* Espaciado entre líneas */
+        }
+        /* Estilos para los enlaces */
+        a {
+            color: #F39C12; /* Color de los enlaces */
+            text-decoration: none; /* Sin subrayado */
+        }
+        a:hover {
+            text-decoration: underline; /* Subrayado al pasar el ratón */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Carga de fuente Roboto -->
+</head>
+<body>
+
+    <h1>Análisis Básico de Datos</h1>
+
+    <h2>Paso 1: Definir el problema</h2>
+    <p>Antes de comenzar el análisis, es importante entender qué se quiere investigar. En este caso, el objetivo es:</p>
+    <ul>
+        <li>Identificar los productos más vendidos.</li>
+        <li>Determinar las ventas mensuales para detectar tendencias estacionales.</li>
+        <li>Proporcionar un informe de ventas que permita a la tienda tomar decisiones sobre inventario y marketing.</li>
+    </ul>
+
+    <h2>Paso 2: Recolectar los datos</h2>
+    <p>Supongamos que tienes un archivo de ventas que contiene los siguientes datos:</p>
+    
+    <table style="width: 70%; table-layout: auto; border-collapse: collapse;">
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Ventas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tabla de Ventas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>10</td><td>15/01/2024</td><td>Producto J</td><td>Electrónica</td><td>4</td><td>55.00</td><td>220.00</td></tr>
+            <tr><td>11</td><td>16/01/2024</td><td>Producto K</td><td>Ropa</td><td>5</td><td>30.00</td><td>150.00</td></tr>
+            <tr><td>12</td><td>17/01/2024</td><td>Producto L</td><td>Hogar</td><td>2</td><td>80.00</td><td>160.00</td></tr>
+            <tr><td>13</td><td>20/01/2024</td><td>Producto M</td><td>Electrónica</td><td>3</td><td>100.00</td><td>300.00</td></tr>
+            <tr><td>14</td><td>21/01/2024</td><td>Producto N</td><td>Ropa</td><td>7</td><td>20.00</td><td>140.00</td></tr>
+            <tr><td>15</td><td>22/01/2024</td><td>Producto O</td><td>Hogar</td><td>1</td><td>90.00</td><td>90.00</td></tr>
+            <tr><td>16</td><td>23/01/2024</td><td>Producto P</td><td>Electrónica</td><td>6</td><td>25.00</td><td>150.00</td></tr>
+            <tr><td>17</td><td>24/01/2024</td><td>Producto Q</td><td>Ropa</td><td>8</td><td>15.00</td><td>120.00</td></tr>
+            <tr><td>18</td><td>25/01/2024</td><td>Producto R</td><td>Hogar</td><td>3</td><td>60.00</td><td>180.00</td></tr>
+            <tr><td>19</td><td>26/01/2024</td><td>Producto S</td><td>Electrónica</td><td>2</td><td>120.00</td><td>240.00</td></tr>
+            <tr><td>20</td><td>27/01/2024</td><td>Producto T</td><td>Ropa</td><td>1</td><td>50.00</td><td>50.00</td></tr>
+            <tr><td>21</td><td>28/01/2024</td><td>Producto U</td><td>Hogar</td><td>9</td><td>5.00</td><td>45.00</td></tr>
+            <tr><td>22</td><td>30/01/2024</td><td>Producto V</td><td>Electrónica</td><td>4</td><td>35.00</td><td>140.00</td></tr>
+            <tr><td>23</td><td>01/02/2024</td><td>Producto W</td><td>Ropa</td><td>2</td><td>60.00</td><td>120.00</td></tr>
+            <tr><td>24</td><td>02/02/2024</td><td>Producto X</td><td>Hogar</td><td>5</td><td>12.00</td><td>60.00</td></tr>
+            <tr><td>25</td><td>03/02/2024</td><td>Producto Y</td><td>Electrónica</td><td>3</td><td>90.00</td><td>270.00</td></tr>
+            <tr><td>26</td><td>04/02/2024</td><td>Producto Z</td><td>Ropa</td><td>4</td><td>22.00</td><td>88.00</td></tr>
+            <tr><td>27</td><td>05/02/2024</td><td>Producto AA</td><td>Hogar</td><td>2</td><td>45.00</td><td>90.00</td></tr>
+            <tr><td>28</td><td>06/02/2024</td><td>Producto AB</td><td>Electrónica</td><td>7</td><td>15.00</td><td>105.00</td></tr>
+            <tr><td>29</td><td>07/02/2024</td><td>Producto AC</td><td>Ropa</td><td>6</td><td>18.00</td><td>108.00</td></tr>
+            <tr><td>30</td><td>08/02/2024</td><td>Producto AD</td><td>Hogar</td><td>1</td><td>70.00</td><td>70.00</td></tr>
+            <tr><td>31</td><td>01/03/2024</td><td>Producto A</td><td>Electrónica</td><td>5</td><td>150.00</td><td>750.00</td></tr>
+            <tr><td>32</td><td>02/03/2024</td><td>Producto B</td><td>Ropa</td><td>4</td><td>45.00</td><td>180.00</td></tr>
+            <tr><td>33</td><td>03/03/2024</td><td>Producto C</td><td>Hogar</td><td>3</td><td>100.00</td><td>300.00</td></tr>
+            <tr><td>34</td><td>05/03/2024</td><td>Producto D</td><td>Electrónica</td><td>6</td><td>80.00</td><td>480.00</td></tr>
+            <tr><td>35</td><td>06/03/2024</td><td>Producto E</td><td>Ropa</td><td>7</td><td>35.00</td><td>245.00</td></tr>
+            <tr><td>36</td><td>08/03/2024</td><td>Producto F</td><td>Hogar</td><td>2</td><td>120.00</td><td>240.00</td></tr>
+            <tr><td>37</td><td>10/03/2024</td><td>Producto G</td><td>Electrónica</td><td>1</td><td>300.00</td><td>300.00</td></tr>
+            <tr><td>38</td><td>11/03/2024</td><td>Producto H</td><td>Ropa</td><td>3</td><td>50.00</td><td>150.00</td></tr>
+            <tr><td>39</td><td>15/03/2024</td><td>Producto I</td><td>Hogar</td><td>4</td><td>65.00</td><td>260.00</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Resumen de Ventas por Mes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Total Ventas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Enero</td><td>2,545.00</td></tr>
+            <tr><td>Febrero</td><td>1,127.00</td></tr>
+            <tr><td>Marzo</td><td>2,160.00</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+
+    <h2>Paso 3: Limpieza de los datos</h2>
+    <p>Antes de analizar los datos, es crucial limpiarlos. Esto puede incluir:</p>
+    <ul>
+        <li>Eliminar duplicados.</li>
+        <li>Corregir errores tipográficos.</li>
+        <li>Eliminar registros incompletos.</li>
+    </ul>
+
+    <h2>Paso 4: Análisis de datos</h2>
+    <p>Existen varias técnicas para analizar los datos:</p>
+    <ul>
+        <li>Uso de gráficos para visualizar tendencias.</li>
+        <li>Cálculo de estadísticas descriptivas como media, mediana y moda.</li>
+        <li>Análisis de correlaciones entre variables.</li>
+    </ul>
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Análisis de Ventas</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f9f9f9;
+            }
+            h1 {
+                color: #333;
+            }
+            h2 {
+                color: #555;
+            }
+            .results {
+                margin-bottom: 20px;
+                padding: 15px;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Análisis de Ventas</h1>
+    
+        <div class="results">
+            <h2>Gráfico de Ventas Totales por Mes</h2>
+            <img src="images/grafico_4.png" alt="Gráfico de Ventas Totales por Mes">
+        </div>
+    
+        <div class="results">
+            <h2>Estadísticas Descriptivas</h2>
+            <p><strong>Para Cantidad:</strong></p>
+            <ul>
+                <li>Media: 4.0</li>
+                <li>Mediana: 4.0</li>
+                <li>Moda: 2</li>
+            </ul>
+            <p><strong>Para Precio Unitario:</strong></p>
+            <ul>
+                <li>Media: 65.4</li>
+                <li>Mediana: 52.5</li>
+                <li>Moda: 15.0</li>
+            </ul>
+        </div>
+    
+        <div class="results">
+            <h2>Análisis de Correlación</h2>
+            <p>Correlación entre Cantidad Vendida y Precio Unitario: -0.55</p>
+        </div>
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpretación de Estadísticas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interpretación de Estadísticas de Ventas</h1>
+
+    <h2>1. Estadísticas Descriptivas para Cantidad Vendida</h2>
+    <p><strong>Media:</strong> 4.0: En promedio, se vendieron 4 unidades de los productos. Esto indica que, en general, la cantidad de productos vendidos es moderada, lo que puede reflejar la demanda y aceptación de los productos.</p>
+    <p><strong>Mediana:</strong> 4.0: La mediana también es 4, lo que significa que la mitad de las transacciones tuvo ventas de 4 unidades o menos. Este resultado sugiere que la distribución de las cantidades vendidas es bastante equilibrada, sin grandes sesgos hacia cifras extremas.</p>
+    <p><strong>Moda:</strong> 2: La moda es 2, lo que indica que la cantidad más frecuente vendida en las transacciones fue 2 unidades. Esto puede sugerir que muchos clientes tienden a comprar en cantidades más bajas, posiblemente como parte de compras de prueba o por restricciones en su presupuesto.</p>
+
+    <h2>2. Estadísticas Descriptivas para Precio Unitario</h2>
+    <p><strong>Media:</strong> 65.4: El precio promedio de los productos vendidos es de 65.4 unidades monetarias. Esto da una idea del rango de precios de los productos, que puede influir en la demanda.</p>
+    <p><strong>Mediana:</strong> 52.5: La mediana de 52.5 sugiere que la mitad de los productos se vendieron a un precio de 52.5 unidades monetarias o menos, lo que puede indicar que la mayoría de los productos tienen precios accesibles para los consumidores.</p>
+    <p><strong>Moda:</strong> 15.0: La moda es 15, lo que significa que el precio más frecuente es 15 unidades monetarias. Esto puede señalar que hay un grupo de productos que son considerablemente más económicos y que son preferidos por los consumidores.</p>
+
+    <h2>3. Correlación entre Cantidad Vendida y Precio Unitario</h2>
+    <p><strong>Correlación:</strong> -0.55: Este valor indica una correlación negativa moderada entre la cantidad vendida y el precio unitario. En términos prácticos, esto sugiere que, a medida que el precio de los productos aumenta, la cantidad vendida tiende a disminuir, y viceversa. Este comportamiento es típico en muchos mercados, donde los consumidores son sensibles a los precios; es decir, cuando los precios son más altos, es probable que se reduzcan las compras.</p>
+
+    <h2>Conclusiones Generales</h2>
+    <p>La demanda por los productos parece ser sensible al precio, lo que puede implicar que la estrategia de precios debe ser cuidadosamente considerada para maximizar las ventas.</p>
+    <p>La frecuencia de compras y la distribución de precios sugieren que los productos en el rango de precios más bajo son preferidos por los consumidores, lo que puede ser un indicativo de que el mercado tiene un segmento de clientes que busca buenas ofertas.</p>
+    <p>Las estadísticas sugieren una tendencia general que puede guiar las decisiones de inventario y estrategia de marketing, particularmente en cómo se posicionan los productos en diferentes rangos de precios.</p>
+
+    
+        <h2>Paso 5: Presentación de resultados</h2>
+    <p>Los resultados del análisis deben presentarse de manera clara y concisa, utilizando visualizaciones y resúmenes. Algunos métodos incluyen:</p>
+    <ul>
+        <li>Gráficos de barras para comparar categorías.</li>
+        <li>Gráficos de líneas para mostrar tendencias a lo largo del tiempo.</li>
+        <li>Informes escritos que resuman los hallazgos clave.</li>
+    </ul>
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gráficas de Ventas</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                text-align: center;
+            }
+            .grafico {
+                display: block;
+                margin: 20px auto;
+                max-width: 80%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <h1>Gráficas de Ventas</h1>
+    
+    <h2>Total de Ventas por Categoría</h2>
+    <img src="images/grafico_5.png" alt="Gráfico de Ventas por Categoría" class="grafico">
+    
+    <h2>Tendencias de Ventas a lo Largo del Tiempo</h2>
+    <img src="images/grafico_6.png" alt="Gráfico de Tendencias de Ventas" class="grafico">
+    
+    
+
+    <h2>Paso 6: Toma de decisiones</h2>
+    <p>Basándose en el análisis, la tienda puede tomar decisiones informadas, como ajustar el inventario o modificar estrategias de marketing.</p>
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Decisiones Estratégicas para la Tienda</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            h1 {
+                color: #2c3e50;
+            }
+            ol {
+                margin-left: 20px;
+            }
+            li {
+                margin-bottom: 10px;
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: white;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Decisiones Estratégicas para la Tienda</h1>
+            <ol>
+                <li><strong>Ajuste de Precios:</strong>
+                    <ul>
+                        <li>Estrategia de Precios Dinámicos: Evaluar ajustes en productos menos vendidos o en categorías con menor demanda.</li>
+                    </ul>
+                </li>
+                <li><strong>Gestión de Inventario:</strong>
+                    <ul>
+                        <li>Enfoque en Categorías Rentables: Aumentar inventario de productos electrónicos y considerar la reducción de inventario en categorías de baja rotación.</li>
+                    </ul>
+                </li>
+                <li><strong>Promociones y Marketing:</strong>
+                    <ul>
+                        <li>Ofertas Específicas por Categoría: Implementar promociones para incentivar la compra de productos menos vendidos.</li>
+                        <li>Campañas Dirigidas: Crear campañas de marketing basadas en tendencias de ventas.</li>
+                    </ul>
+                </li>
+                <li><strong>Análisis de Clientes:</strong>
+                    <ul>
+                        <li>Segmentación de Clientes: Analizar quiénes son los compradores de cada categoría para crear campañas personalizadas.</li>
+                        <li>Feedback del Cliente: Realizar encuestas para entender las razones detrás de ventas bajas.</li>
+                    </ul>
+                </li>
+                <li><strong>Optimización de Canales de Ventas:</strong>
+                    <ul>
+                        <li>Diversificación de Canales de Venta: Mejorar la tienda en línea y utilizar redes sociales para la venta.</li>
+                        <li>Eventos de Venta: Organizar eventos especiales para atraer más clientes.</li>
+                    </ul>
+                </li>
+                <li><strong>Análisis Continuo de Datos:</strong>
+                    <ul>
+                        <li>Implementación de un Sistema de Análisis de Datos: Establecer un sistema para reaccionar rápidamente a las tendencias del mercado.</li>
+                        <li>Monitoreo de Correlaciones: Seguir analizando correlaciones entre cantidad vendida y precio unitario.</li>
+                    </ul>
+                </li>
+                <li><strong>Capacitación del Personal:</strong>
+                    <ul>
+                        <li>Formación en Ventas y Atención al Cliente: Capacitar al personal en técnicas de venta para mejorar la experiencia del cliente.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+      
+
+    <h2>Conclusión</h2>
+    <p>El análisis de datos es una herramienta poderosa que permite a las empresas tomar decisiones basadas en evidencias y optimizar sus operaciones.</p>
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conclusiones de Análisis de Ventas</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            h1 {
+                color: #2c3e50;
+            }
+            ol {
+                margin-left: 20px;
+            }
+            li {
+                margin-bottom: 10px;
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: white;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Conclusiones de Análisis de Ventas</h1>
+            <ol>
+                <li><strong>Tendencias de Ventas:</strong> Se observa una tendencia general de ventas más altas en productos electrónicos, lo que indica que esta categoría tiene mayor aceptación y demanda en el mercado.</li>
+                <li><strong>Importancia de Ajustar Precios:</strong> La correlación negativa entre la cantidad vendida y el precio unitario sugiere que se pueden realizar ajustes en precios para productos que no se están vendiendo bien.</li>
+                <li><strong>Gestión de Inventario:</strong> Es crucial ajustar el inventario según las categorías que están funcionando mejor, reduciendo la oferta de productos con baja rotación.</li>
+                <li><strong>Oportunidades de Marketing:</strong> Se deben implementar campañas de marketing más específicas para productos menos populares, así como aprovechar las tendencias estacionales en las ventas.</li>
+                <li><strong>Análisis Continuo:</strong> Se recomienda establecer un sistema de análisis de datos para monitorear de forma continua las ventas y ajustar estrategias rápidamente según las tendencias observadas.</li>
+                <li><strong>Capacitación del Personal:</strong> La formación en ventas y atención al cliente puede mejorar la experiencia del consumidor y potencialmente aumentar las ventas.</li>
+            </ol>
+        </div>
+        
+</body>
+</html>
+
+
+
+
